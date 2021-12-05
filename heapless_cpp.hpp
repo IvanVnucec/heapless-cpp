@@ -9,7 +9,7 @@ class Array
 {
 private:
     T m_buffer[L];
-    unsigned m_len = L;
+    const unsigned m_len = L;
 
 public:
     Array()
