@@ -23,7 +23,6 @@ public:
 
     Array(const Array& t)
     {
-        // TODO: for(val : vals) ...
         for (unsigned i = 0u; i<t.len(); i++)
             m_buffer[i] = t[i];
     }
@@ -45,7 +44,6 @@ public:
 
     Array& operator=(const Array& t)
     {
-        // TODO: for(val : vals) ...
         for (unsigned i = 0u; i<t.len(); i++)
             m_buffer[i] = t[i];
 
