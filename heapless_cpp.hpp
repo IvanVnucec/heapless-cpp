@@ -6,7 +6,7 @@ namespace hlcpp
 
 #include <cstring>
 
-template <typename T, unsigned L>
+template <typename T, unsigned L=1>
 class Array
 {
 protected:
