@@ -31,6 +31,17 @@ MU_TEST(test_string_len_empty){
     mu_check(str.to_cstr()[0] == '\0');
 }
 
+MU_TEST(test_string_cstr_constructor){
+    hlcpp::String<10> str("ivan");
+	
+    mu_check(str.len() == 4);
+    mu_check(str.to_cstr()[0] == 'i');
+    mu_check(str.to_cstr()[1] == 'v');
+    mu_check(str.to_cstr()[2] == 'a');
+    mu_check(str.to_cstr()[3] == 'n');
+    mu_check(str.to_cstr()[4] == '\0');
+}
+
 MU_TEST_SUITE(test_array) {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
 
@@ -42,6 +53,7 @@ MU_TEST_SUITE(test_string) {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
 
 	MU_RUN_TEST(test_string_len_empty);
+	MU_RUN_TEST(test_string_cstr_constructor);
 }
 
 int main(int argc, char *argv[]) {
