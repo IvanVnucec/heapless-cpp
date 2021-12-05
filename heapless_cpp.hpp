@@ -42,6 +42,16 @@ public:
     {
         return m_buffer[i];
     }
+
+    Array& operator=(const Array& t)
+    {
+        // TODO: for(val : vals) ...
+        for (unsigned i = 0u; i<t.len(); i++)
+            m_buffer[i] = t[i];
+
+        return *this;
+    }
+
 };
 
 

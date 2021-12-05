@@ -35,6 +35,19 @@ MU_TEST(test_array_copy_constructor){
     mu_check(b[2] == 15151515);
 }
 
+MU_TEST(test_array_assignment_operator){
+    hlcpp::Array<int, 3> a;
+    a[0] = a[1] = a[2] = 15151515;
+    hlcpp::Array<int, 3> b;
+
+    b = a;
+
+    mu_check(b.len() == a.len());
+    mu_check(b[0] == 15151515);
+    mu_check(b[1] == 15151515);
+    mu_check(b[2] == 15151515);
+}
+
 MU_TEST(test_string_len_empty){
     hlcpp::String<10> str;
 	
@@ -67,6 +80,7 @@ MU_TEST_SUITE(test_array) {
 	MU_RUN_TEST(test_array_len);
 	MU_RUN_TEST(test_array_index);
     MU_RUN_TEST(test_array_copy_constructor);
+    MU_RUN_TEST(test_array_assignment_operator);
 }
 
 MU_TEST_SUITE(test_string) {
