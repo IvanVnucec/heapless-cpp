@@ -7,9 +7,8 @@ namespace hlcpp
 template <typename T, unsigned L>
 class Array
 {
-private:
+protected:
     T m_buffer[L];
-    const unsigned m_len = L;
 
 public:
     Array()
@@ -22,7 +21,7 @@ public:
 
     unsigned len()
     {
-        return m_len;
+        return L;
     }
 
     T& operator[](unsigned i)
