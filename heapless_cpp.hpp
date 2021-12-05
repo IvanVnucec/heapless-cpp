@@ -53,6 +53,11 @@ public:
         return m_len;
     }
 
+    const char* to_cstr()
+    {
+        return this->m_buffer;
+    }
+
 };
 
 }

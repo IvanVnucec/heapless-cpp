@@ -28,6 +28,7 @@ MU_TEST(test_string_len_empty){
     hlcpp::String<10> str;
 	
     mu_check(str.len() == 0u);
+    mu_check(str.to_cstr()[0] == '\0');
 }
 
 MU_TEST_SUITE(test_array) {
