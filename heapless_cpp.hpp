@@ -21,12 +21,24 @@ public:
     {
     }
 
-    unsigned len()
+    Array(const Array& t)
+    {
+        // TODO: for(val : vals) ...
+        for (unsigned i = 0u; i<t.len(); i++)
+            m_buffer[i] = t[i];
+    }
+
+    unsigned len() const
     {
         return L;
     }
 
     T& operator[](unsigned i)
+    {
+        return m_buffer[i];
+    }
+
+    T operator[](unsigned i) const
     {
         return m_buffer[i];
     }
