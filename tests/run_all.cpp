@@ -78,8 +78,13 @@ MU_TEST_SUITE(test_string) {
 }
 
 int main(int argc, char *argv[]) {
+    (void) argc;
+    (void) argv;
+
 	MU_RUN_SUITE(test_array);
 	MU_RUN_SUITE(test_string);
-	MU_REPORT();
-	return MU_EXIT_CODE;
+	
+    MU_REPORT();
+	
+    return MU_EXIT_CODE;
 }
