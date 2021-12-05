@@ -25,6 +25,10 @@ public:
         return m_len;
     }
 
+    T& operator[](unsigned i)
+    {
+        return m_buffer[i];
+    }
 };
 
 }
