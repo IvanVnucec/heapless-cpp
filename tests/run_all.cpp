@@ -78,6 +78,7 @@ MU_TEST(test_string_copy_constructor){
     hlcpp::String<10> a("ivan");
     hlcpp::String<10> b = a;
 
+    mu_check(b.len() == a.len());
     mu_check(b[0] == 'i');
     mu_check(b[1] == 'v');
     mu_check(b[2] == 'a');
