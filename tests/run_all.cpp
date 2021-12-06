@@ -74,6 +74,17 @@ MU_TEST(test_string_index){
 	mu_check(str[0] == 'x');
 }
 
+MU_TEST(test_string_copy_constructor){
+    hlcpp::String<10> a("ivan");
+    hlcpp::String<10> b = a;
+
+    mu_check(b[0] == 'i');
+    mu_check(b[1] == 'v');
+    mu_check(b[2] == 'a');
+    mu_check(b[3] == 'n');
+    mu_check(b[4] == '\0');
+}
+
 MU_TEST_SUITE(test_array) {
 	MU_SUITE_CONFIGURE(&test_setup, &test_teardown);
 
@@ -89,6 +100,7 @@ MU_TEST_SUITE(test_string) {
 	MU_RUN_TEST(test_string_len_empty);
 	MU_RUN_TEST(test_string_cstr_constructor);
 	MU_RUN_TEST(test_string_index);
+    MU_RUN_TEST(test_string_copy_constructor);
 }
 
 int main(int argc, char *argv[]) {
